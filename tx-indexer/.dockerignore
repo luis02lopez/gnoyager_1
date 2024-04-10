@@ -1,0 +1,18 @@
+# MacOS Leftovers
+.DS_Store
+
+# Data Leftovers
+indexer-db/*
+
+# Editor Leftovers
+.vscode
+.idea
+
+# Log files
+*.log
+
+# Build Leftovers
+build/*
+
+# Configuration files
+*.toml

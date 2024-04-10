@@ -1,0 +1,5 @@
+FROM golang:1.22
+COPY . /app
+WORKDIR /app
+RUN make build
+CMD [ "./build/tx-indexer", "start", "--remote", "http://gno_node:26657", "--db-path", "indexer-db" ]

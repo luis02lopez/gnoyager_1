@@ -1,0 +1,7 @@
+global:
+  scrape_interval: 5s
+rule_files:
+scrape_configs:
+  - job_name: "gno_monitoring"
+    static_configs:
+      - targets: ["gno_monitoring:2112"]

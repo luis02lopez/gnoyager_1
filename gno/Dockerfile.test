@@ -1,0 +1,7 @@
+FROM golang:1.22
+COPY . /app
+WORKDIR /app
+RUN cd gno.land && make build
+# RUN KEYNAME="$(./gno.land/build/gnokey generate)" && ADDRESS="$(./gno.land/build/gnokey add -recover $KEYNAME)"
+# ENTRYPOINT [ "/app/docker-entrypoint.sh" ]
+CMD [ "bash", "-c", "cd gno.land && ./build/gnoland start --skip-start && ./build/gnoland config set rpc.laddr tcp://0.0.0.0:26657 --config-path testdir/config/config.toml && ./build/gnoland start" ]
